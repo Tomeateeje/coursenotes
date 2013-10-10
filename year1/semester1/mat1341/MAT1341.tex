@@ -1338,4 +1338,232 @@
 				\end{itemize}	
 			\end{itemize}
 		\end{enumerate}
+		\pagebreak
+		\Large{Chapter 13: Solving systems of linear equations (cont'd)}\\
+		\normalsize
+		{\bf Def:}\\
+		Two linear systems are equivalent if they have the same general solution.\\
+		{\bf Thm:}\\
+		If an ERO is performed on the augmented matrix of a linear system, the resulting linear system is equivalent to the original one.\\
+		{\bf Def:}\\
+		Two matrices $A$ and $B$ are row equivalent if
+		\begin{itemize}
+			\item $A\sim B$, if $B$ can be obtained from $A$ by a finite sequence of ERO.
+		\end{itemize}
+		{\bf Thm:}\\
+		Every matrix is row equivalent to a unique matrix in RREF. This statement is false if we replace RREF by REF).\\
+		$$
+			\begin{bmatrix}
+				{1}&{1}\\
+				{0}&{1}
+			\end{bmatrix}
+			\longrightarrow R_1-R_2\longrightarrow
+			\begin{bmatrix}
+				{1}&{0}\\
+				{0}&{1}
+			\end{bmatrix}
+		$$
+		$$
+			\text{REF}~~~~~~~~~~~~~~~~~~~~~~~~~~~\text{RREF}
+		$$
+		{\bf 13.1}
+		\begin{itemize}
+			\item If the RREF of the augmented matrix has a row like
+			$$
+				\left[\begin{array}{ccc|c}
+					{0}&{0}&{0}&{b}
+				\end{array}\right]
+			$$
+			where $b\ne 0$, then the system is inconsistent.
+		\end{itemize}
+		Otherwise, the system is consistent.
+		\begin{itemize}
+			\item If every column has leading 1, then there is a unique solution, e.g.
+			$$
+				\left[
+					\begin{array}{cc|c}
+						{1}&{0}&{3}\\
+						{0}&{1}&{4}\\
+						{0}&{0}&{0}
+					\end{array}
+				\right]
+			$$
+			\item Otherwise, there are infinitely many solutions.
+			\begin{enumerate}
+				\item Set each non-leading variable equal to a different parameter
+				\item Solve for the leading variables
+			\end{enumerate}
+			e.g.
+			$$
+				\left[
+					\begin{array}{ccc|c}
+					{1}&{0}&{2}&{3}\\
+					{0}&{1}&{-4}&{4}\\
+					{0}&{0}&{0}&{0}
+					\end{array}
+				\right]
+			$$
+			Set $z=t$, $t\in\mathbb{R}$\\
+			Then
+			\begin{align*}
+				y&=4+4t\\
+				x&=3-2t\\
+				\{3-2t,4&+4t,t~|~t\in\mathbb{R}\}\\
+			\end{align*}
+			\pagebreak\\
+			e.g.
+			$$
+				\left[
+					\begin{array}{ccccc|c}
+						{1}&{2}&{0}&{0}&{3}&{7}\\
+						{0}&{0}&{1}&{0}&{0}&{5}\\
+						{0}&{0}&{0}&{1}&{-1}&{6}
+					\end{array}
+				\right]
+			$$
+			Set $x_2=s$\\
+			$x_5=t$\\
+			$s,t\in\mathbb{R}$\\
+			Then $x_4=6+t$\\
+			$x_3=5$\\
+			$x_1=7-2s-3t$
+		\end{itemize}
+		\large {13.2 Gaussian elimination}\\
+		\normalsize
+		\begin{enumerate}
+			\item If the matrix is $0$ (the zero matrix), done.
+			\item Locate the leftmost nonzero column.\\
+			Interchange rows if necessary, to bring a nonzero entry to the $1^{\text{st}}$ row.
+			\item Multiply the first row with a scalar to get a leading 1.
+			\item {\bf \emph{Annihilate}} the rest of the column.
+			\item Repeat step 1-4 ignoring the first row.
+		\end{enumerate}
+		{\bf Iteration 2:}
+		\begin{enumerate}
+			\item Same as above
+			\item Locate the leftmost column with a nonzero entry in the $2^{\text{nd}}$-last row, e.g.
+			$$
+				\left[
+					\begin{array}{cccc|c}
+						{1}&{2}&{0}&{3}&{5}\\
+						{0}&{0}&{4}&{7}&{-4}\\
+						{0}&{0}&{6}&{8}&{3}
+					\end{array}
+				\right]
+			$$
+			Interchange rows if necessary to bring a nonzero entry to the $2^{\text{nd}}$ row.
+			\item Multiply the $2^{\text{nd}}$ row with a scalar to get a leading 1.\\
+			e.g.
+			$$
+				\left[
+					\begin{array}{cccc|c}
+						{0}&{0}&{3}&{3}&{4}\\
+						{0}&{1}&{1}&{2}&{0}\\
+						{0}&{-1}&{0}&{1}&{1}
+					\end{array}
+				\right]\rightarrow R_1\leftrightarrow R_2\rightarrow
+				\left[
+					\begin{array}{cccc|c}
+						{0}&{1}&{1}&{2}&{0}\\
+						{0}&{0}&{3}&{3}&{4}\\
+						{0}&{-1}&{0}&{1}&{1}
+					\end{array}
+				\right]\rightarrow R_3+R_1\rightarrow
+				\left[
+					\begin{array}{cccc|c}
+						{0}&{1}&{1}&{2}&{0}\\
+						{0}&{0}&{3}&{3}&{4}\\
+						{0}&{0}&{1}&{3}&{1}
+					\end{array}
+				\right]\rightarrow
+			$$
+			$$
+				\frac{1}{3}R_2\rightarrow
+				\left[
+					\begin{array}{cccc|c}
+						{0}&{1}&{1}&{2}&{0}\\
+						{0}&{0}&{1}&{1}&{4/3}\\
+						{0}&{0}&{1}&{3}&{1}
+					\end{array}
+				\right]\rightarrow R_1-R_2,~R_3-R_2\rightarrow
+				\left[
+					\begin{array}{cccc|c}
+						{0}&{1}&{0}&{1}&{-4/3}\\
+						{0}&{0}&{1}&{1}&{4/3}\\
+						{0}&{0}&{0}&{2}&{-1/3}
+					\end{array}
+				\right]\rightarrow
+			$$
+			$$
+				\frac{1}{2}R_3\rightarrow
+				\left[
+					\begin{array}{cccc|c}
+						{0}&{1}&{0}&{1}&{-4/3}\\
+						{0}&{0}&{1}&{1}&{4/3}\\
+						{0}&{0}&{0}&{1}&{-1/6}
+					\end{array}
+				\right]\rightarrow
+			$$
+			At this point, the matrix is already in REF. To find the RREF:
+			$$
+				R_1-R_3,~R_2-R_3\rightarrow\left[
+					\begin{array}{cccc|c}
+						{0}&{1}&{0}&{0}&{-7/6}\\
+						{0}&{0}&{1}&{0}&{3/2}\\
+						{0}&{0}&{0}&{1}&{-1/6}
+					\end{array}
+				\right]
+			$$
+			The general solution of $\{ (t,-\frac{7}{6},\frac{3}{2},-\frac{1}{6})~|~t\in\mathbb{R} \}$
+			{\bf Ex:}
+			$$
+				\left[
+					\begin{array}{ccc|c}
+						{2}&{2}&{-3}&{1}\\
+						{1}&{0}&{1}&{5}\\
+						{3}&{4}&{-7}&{-3}
+					\end{array}
+				\right]\rightarrow\frac{1}{2}R_1\rightarrow
+				\left[
+					\begin{array}{ccc|c}
+						{1}&{1}&{-3/2}&{1/2}\\
+						{1}&{0}&{1}&{5}\\
+						{3}&{4}&{-7}&{-3}
+					\end{array}
+				\right]\rightarrow\frac{1}{3}R_3\rightarrow
+				\left[
+					\begin{array}{ccc|c}
+						{1}&{1}&{-3/2}&{1/2}\\
+						{1}&{0}&{1}&{5}\\
+						{1}&{4/3}&{-7/3}&{-1}
+					\end{array}
+				\right]\rightarrow
+			$$
+			$$
+				R_2\leftrightarrow R_3\rightarrow
+				\left[
+					\begin{array}{ccc|c}
+						{1}&{1}&{-3/2}&{1/2}\\
+						{1}&{4/3}&{-7/3}&{-1}\\
+						{1}&{0}&{1}&{5}
+					\end{array}
+				\right]\rightarrow R_2\leftrightarrow R_1\rightarrow
+				\left[
+					\begin{array}{ccc|c}
+						{1}&{4/3}&{-7/3}&{-1}\\
+						{1}&{1}&{-3/2}&{1/2}\\
+						{1}&{0}&{1}&{5}
+					\end{array}
+				\right]
+			$$
+		\end{enumerate}
+		\large{13.3 Definition}\\
+		\normalsize
+		The rank of a matrix $A$, denoted rank($A$) is the number of leading 1s in any REF of $A$.\\
+		e.g.
+		$$
+			\text{rank}\left(\begin{bmatrix}{1}&{3}\\{0}&{1}\end{bmatrix}\right)=2
+		$$
+		{\bf Remark}\\
+		rank($A$) $\le$ number of columns of $A$
 \end{document}
