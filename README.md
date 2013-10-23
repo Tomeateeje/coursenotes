@@ -37,7 +37,8 @@ no way I could draw TikZ fast enough to keep up with the rate at which
 the slides change. These examples are all on the course website, in
 [this PDF](http://mysite.science.uottawa.ca/pparent/September%2016th.pdf).
 
-Commits and pushes will hopefully now be handled by `cron`.
+Commits and pushes can't be handled by `cron` because of a permissions
+issue. I'll try to keep them as consistent as possible.
 
 ### License (in plain English)
 
@@ -78,4 +79,4 @@ Commits and pushes will hopefully now be handled by `cron`.
 
 ### TODO
 
-* Complete ENG 1112 notes
+* Fix `cron` permissions issue to automate commits and pushes
