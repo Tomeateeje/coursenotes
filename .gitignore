@@ -42,3 +42,6 @@
 *.key
 *DGD.tex
 *.hs
+*.erl
+*.rb
+*.pl
