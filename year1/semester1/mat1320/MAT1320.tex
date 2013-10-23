@@ -926,4 +926,68 @@
 			\left.\frac{dr}{dt}\right|_{r=25cm}=\frac{1}{4\pi(25)^2}\frac{dV}{dt}\\
 		\end{align*}
 	\end{enumerate}
+		\pagebreak
+	\begin{enumerate}
+		\item Optimization
+		\item Second derivative tests
+		\item Optimization problems
+	\end{enumerate}
+	\normalsize
+	This lecture follows closely the one given on September $25^{\text{th}}$ about "What is $f'$ saying?" (absolute min/max vs local min/max).\\
+	The idea here is, given a function $f:D\rightarrow\mathbb{R}$, how do we find its maximum or minimum value?\\
+	Bur before jumping head on into computations, one needs to check if such computations have any chance to end up with a reasonable answer.\\\\
+	\large{\bf Extreme value theorem}\\
+	\normalsize
+	Suppose the function $f:[a,b]\rightarrow\mathbb{R}$ is continuous and defined on a \underline{closed} interval. Then there exist $c,d\in[a,b]$ such that
+	$$
+		f(x)\le f(x)\le f(d)~\forall x\in[a,b]
+	$$
+	{\bf Recall Fermat's Theorem:}\\
+	Let $f:D\rightarrow\mathbb{R}$ be a function and a point $c\in~]a,b[~\subset D$.\\
+	If $f$ has a local maximum or minimum at $c$, then $c$ is a critical point of $f$, i.e. either $f'(x)=0$ or $f'(c)$ does not exist. A turning point may also be a critical point.\\
+	Given a continuous function $f:[a,b]\rightarrow\mathbb{R}$ follow the following steps to find its maximum/minimum value:
+	\begin{enumerate}
+		\item Find the values of $f$ at all its critical points within $]a,b[$
+		\item Compute $f(a)$ and $f(b)$
+		\item The largest/smallest values from (1) and (2) will be the maxima/minima of $f$
+	\end{enumerate}
+	{\bf Example}\\
+	Find the maximum and minimum values of the function $f(x)=\frac{x}{x+1}$ on the interval $[1,2]$.\\
+	\underline{Solution:} The function is a rational function well-defined on $[1,2]$ and is thus continuous. Hence we now that it achieves its maximum and minimum values.
+	\begin{itemize}
+		\item To find its critical points, we need its derivative:
+		$$
+			f'(x)=\frac{1}{(x+1)^2}
+		$$
+	\end{itemize}
+	From our computation, we see that $f'(x)$ is never zero and is well defined on $[1,2]$. Hence $f$ does not have any critical points.
+	\begin{itemize}
+		\item f(1)=1/2\text{ and }f(2)=2/3
+	\end{itemize}
+	\underline{Conclusion:} The maximum is 2/3 and the minimum is 1/2.\\\\
+	\large{\bf Second derivative}\\
+	\normalsize
+	Let $f:D\rightarrow\mathbb{R}$\\
+	Recall that
+	\begin{itemize}
+		\item If $f'>0$ on $I$, then $f$ is increasing on $I$; and
+		\item If $f'<0$ on $I$, then $f$ is decreasing on $I$
+	\end{itemize}
+	That gives us a way to determine the concavity of $f$, namely
+	\begin{itemize}
+		\item If $f''>0$ on $I$, then $f$ is concave up on $I$; and
+		\item If $f''<0$ on $I$, then $f$ is concave down on $I$; and
+	\end{itemize}
+	Let $f:D\rightarrow\mathbb{R}$ be a function and suppose $f'(c)=0$. Is it a local minimum/maximum?\\
+	{\bf Theorem}\\
+	Suppose there exists and open interval $]a,b[$ such that $c\in~]a,b[~\subset D$. Then
+	\begin{itemize}
+		\item If $f''>0$ on $]a,b[$, then $f(c)$ is a local minimum.
+		\item If $f''<0$ on $]a,b[$, then $f(c)$ is a local maximum.
+	\end{itemize}
+	\large{\bf Inflection points}\\
+	\normalsize
+	Let $f:D\rightarrow\mathbb{R}$ be a function.\\
+	{\bf Definition:}\\
+	A point $c\in D$ is called an inflection point of $f$ if the concavity of $f$ changes at that point.
 \end{document}

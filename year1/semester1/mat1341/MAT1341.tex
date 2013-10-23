@@ -1338,8 +1338,6 @@
 				\end{itemize}	
 			\end{itemize}
 		\end{enumerate}
-<<<<<<< HEAD
-<<<<<<< HEAD
 		\pagebreak
 		\Large{Chapter 13: Solving systems of linear equations (cont'd)}\\
 		\normalsize
@@ -1568,8 +1566,106 @@
 		$$
 		{\bf Remark}\\
 		rank($A$) $\le$ number of columns of $A$
-=======
->>>>>>> 7143744b3d07d6ce3907179ab107d9267bceeb2a
-=======
->>>>>>> 7143744b3d07d6ce3907179ab107d9267bceeb2a
+		\Large{Chapter 14: Applications and examples of
+                  solving linear systems}\\
+                \normalsize
+                {\bf Recall:}
+
+                $\text{rank}(A)=$number of leading 1s in any REF of
+                $A$.\\
+                rank$(A)\le\text{rank}[A~|~b]\le\text{rank}(A)+1$\\
+                e.g. For a homogeneous linear system,
+                $$
+                \text{rank}(A)=\text{rank}[A~|~b]
+                $$
+                then the system is consistent.\\
+                {\bf Remark}\\
+                If rank$(A)=\text{rank}[A~|~b]$, then the system is
+                consistent.
+                \begin{enumerate}
+                  \item If $\text{rank}(A)(=\text{rank}[A~|~b]<$number
+                    of columns of $A$, then there is at least one
+                    column with a leading 1.
+                  \item If rank$(A)=$number of columns of $A$, then
+                    the system has a unique solution. 
+                \end{enumerate}
+                \large{14.2}\\
+                \normalsize
+                $$
+                \left[\begin{array}{cccc|c}
+                    {1}&{-1}&{0}&{0}&{300}\\
+                    {1}&{0}&{-1}&{0}&{100}\\
+                    {0}&{0}&{1}&{1}&{500}\\
+                    {0}&{1}&{0}&{1}&{300}
+                \end{array}\right]\rightarrow R_2-R_1\rightarrow
+                \left[\begin{array}{cccc|c}                                                                                                          
+                    {1}&{-1}&{0}&{0}&{300}\\
+                    {0}&{1}&{-1}&{0}&{-200}\\
+                    {0}&{0}&{1}&{1}&{500}\\
+                    {0}&{1}&{0}&{1}&{300}
+                \end{array}\right]\rightarrow
+              R_1+R_2;~R_4-R_2\rightarrow
+                \left[\begin{array}{cccc|c}                                                                                                          
+                    {1}&{-1}&{0}&{0}&{300}\\
+                    {1}&{0}&{-1}&{0}&{100}\\
+                    {0}&{0}&{1}&{1}&{500}\\
+                    {0}&{1}&{0}&{1}&{300}
+                  \end{array}\right]
+                $$
+                {\bf The general solution} is
+                $\{(600-t,300-t,500-2,t)~|~t\in\mathbb{R}\}$\\
+                e.g. If the street $x_2$ is blocked, what is the
+                effect?\\
+                $x_2=0\Rightarrow t=300$\\\\
+                \large{14.3}\\
+                \normalsize
+                {\bf Consider}
+                \begin{align*}
+                  kx+y+z&=1\\
+                  x+ky+z&=1\\
+                  x+y+kz&=1\\
+                  \text{with }k\in\mathbb{R}
+                \end{align*}
+                Find all values of $k$ so that the above system has:
+                \begin{enumerate}
+                  \item no solution
+                  \item a unique solution
+                  \item infinitely many solution
+                \end{enumerate}
+                $$
+                \left[\begin{array}{ccc|c}
+                    {k}&{1}&{1}&{1}\\
+                    {1}&{k}&{1}&{1}\\
+                    {1}&{1}&{k}&{1}
+                \end{array}\right]\rightarrow R_1\leftrightarrow
+              R_2\rightarrow
+              \left[\begin{array}{ccc|c}
+                  {1}&{k}&{1}&{1}\\
+                  {k}&{1}&{1}&{1}\\
+                  {1}&{1}&{k}&{1}
+                \end{array}\right]\rightarrow
+              R_2-kR_1;~R_3-R_1\rightarrow
+              \left[\begin{array}{ccc|c}
+                  {1}&{k}&{1}&{1}\\
+                  {0}&{1-k^2}&{1-k}&{1-k}\\
+                  {0}&{1-k}&{k-1}&{0}
+                \end{array}\right]
+                $$
+                Case $k=1$ we get
+                $$
+                \left[\begin{array}{ccc|c}
+                    {1}&{1}&{1}&{1}\\
+                    {0}&{0}&{0}&{0}\\
+                    {0}&{0}&{0}&{0}
+                  \end{array}\right]
+                $$
+                \large{14.4}\\
+                \normalsize
+                Compute span$\{(1,2,3),(4,5,6),(7,8,9)\}$\\
+                What are the vectors $(x,y,z)\in\mathbb{R}^3$ such
+                that there are scalars $a_1,a_2,a_3\in\mathbb{R}$
+                satisfying
+                $$
+                a_1\begin{bmatrix}{1}\\{2}\\{3}\end{bmatrix}+a_2\begin{bmatrix}{4}\\{5}\\{6}\end{bmatrix}+a_3\begin{bmatrix}{7}\\{8}\\{9}\end{bmatrix}=\begin{bmatrix}{x}\\{y}\\{z}\end{bmatrix}?
+                $$
 \end{document}
