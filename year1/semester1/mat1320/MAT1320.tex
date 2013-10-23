@@ -989,5 +989,85 @@
 	\normalsize
 	Let $f:D\rightarrow\mathbb{R}$ be a function.\\
 	{\bf Definition:}\\
-	A point $c\in D$ is called an inflection point of $f$ if the concavity of $f$ changes at that point.
+	A point $c\in D$ is called an inflection point of $f$ if the concavity of $f$ changes at that point.\\\\
+	\Large{Optimisation}
+	\normalsize
+	\begin{enumerate}
+		\item Find the closest point on the parabola $y^2=2x$ to the point (1,4).\\
+		\underline{Solution:} Recall that the distance between the point (1,4) and an arbitrary point $(x,y)$ is given by
+		$$
+			d=\sqrt{(x-1)^2+(y-4)^2}
+		$$
+		Hence we need to minimize $d$ knowing that the point $(x,y)$ that we are looking for satisfies $y^2=2x$\\
+		Let's differentiate both $d$ and $y^2=2x$ implicitly with respect to $x$. Namely
+		\begin{align*}
+			d'&=\frac{1}{2\sqrt{(x-1)^2+(y-4)^2}}\cdot(2(x-1)+2(y-4)\cdot y')\\
+			&=\frac{(x-1)+(y-4)y'}{\sqrt{(x-1)^2+(y-4)^2}}
+		\end{align*}
+		and
+		$$
+			2y\cdot y'=2
+		$$
+		Now substituting $y'=1/y$ into $d'$, we get
+		$$
+			d'=\frac{(x-1)+(1-4/y)}{\sqrt{(x-1)^2+(y-4)^2}}
+		$$
+		Hence the critical points are given by
+		$$
+			0=(x-1)+(1-4/y)\text{ or equivalently }xy=4
+		$$
+		But we need to remember that $y^2=2x$. Hence $y^3=8$, i.e.
+		$$
+			y=2\text{ and }x=2
+		$$
+		Verification:
+		\begin{itemize}
+			\item $d(2,2)=\sqrt{(2-1)^2+(2-4)^2}=\sqrt{5}$
+			\item $d(0,0)=\sqrt{(0-1)^2+(0-4)^2}=\sqrt{17}$
+		\end{itemize}
+		\item Compute the area of the biggest rectangle inscribed into a semicircle of radius $r$.\\
+		We know that
+		\begin{itemize}
+			\item $x^2+y^2=r^2$
+			\item $A_{rec}=2x+y$
+			\item $0\le x,y\le r$
+		\end{itemize}
+		Hence we can write
+		$$
+			A_{rec}(x)=2x\sqrt{r^2-x^2}
+		$$
+		and we notice that the domain is $[0,r]$ and that $A_{rec}$ is continuous on it. We can apply the algorithm to determine the biggest area.
+		\begin{align*}
+			A'_{rec}(x)&=2\sqrt{r^2-x^2}+\frac{2x\cdot(-2x)}{2\sqrt{r^2-x^2}}\\
+			&=\frac{2(r^2-2x^2)}{\sqrt{r^2-x^2}}
+		\end{align*}
+		Hence $A'_{rec}(x)=0\iff x=\frac{r}{\sqrt{2}}$.\\
+		In that case, $A_{rec}(\frac{r}{\sqrt{2}}=r^2$\\
+		$A_{rec}(0)=A_{rec}(r)=0$\\
+		{\bf Conclusion:} The biggest inscribed rectangle has an area of $r^2$
+	\end{enumerate}
+	\Large{l'Hospital's Rule}\\
+	\normalsize
+	The idea is to find a way to determine certain limits, e.g.
+	$$
+		\lim_{x\to 1}\frac{\ln x}{x-1},~~~\lim_{x\to\infty}\frac{e^x}{x^2}~~~\text{or}~~~\lim_{x\to 0^+}x^x
+	$$
+	These are examples of indeterminate forms of the type
+	$$
+		\frac{0}0,~~~\frac{\infty}\infty,~~~0^0
+	$$
+	{\bf The hypothesis}\\
+	Let $f,g:D\rightarrow\mathbb{R}$ be two differentiable functions and suppose that $g'(x)\ne 0$ in a neighbourhood of a point $a\in D$ (but it could be zero at $a$). Moreover, suppose that either
+	$$
+		\lim_{x\to a}f(x)=\lim_{x\to a}g(x)=0
+	$$
+	or
+	$$
+		\lim_{x\to a}f(x)=\pm\infty~~~\text{and}~~~\lim_{x\to a}g(x)=\pm\infty
+	$$
+	{\bf Theorem}
+	$$
+		\lim_{x}\frac{f(x)}{g(x)}=\lim_{x\to a}\frac{f'(x)}{g'(x)}
+	$$
+	{\bf Remark:} The notation $x\to a$ can be replaced by $x\to\pm\infty$ or $x\to a^{\pm}$
 \end{document}
