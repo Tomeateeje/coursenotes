@@ -1069,5 +1069,94 @@
 	$$
 		\lim_{x}\frac{f(x)}{g(x)}=\lim_{x\to a}\frac{f'(x)}{g'(x)}
 	$$
-	{\bf Remark:} The notation $x\to a$ can be replaced by $x\to\pm\infty$ or $x\to a^{\pm}$
+	{\bf Remark:} The notation $x\to a$ can be replaced by $x\to\pm\infty$ or $x\to a^{\pm}$\\
+	\begin{enumerate}
+		\item Compute $\lim_{x\to 0^+}x^x$\\
+		{\bf Solution:} This is an indeterminate form of the type $0^0$. Hence we cannot directly apply the rule. But on one hand,
+		$$
+			x^x=e^{\ln x^x}=e^{x\cdot\ln x}
+		$$
+		On the other hand, recall the definition of continuity, i.e.
+		$$
+			\lim_{x\to a}f(x)=f\left(\lim_{x\to a}x\right)=f(a)
+		$$
+		Whence
+		$$
+			\lim_{x\to 0^+}x^x=\lim_{x\to 0^+}e^{x\cdot\ln x}
+		$$
+		$$
+		f(x)=e^{\left(\lim_{x\to 0^+}x\cdot\ln x\right)}
+		$$
+		$$
+			e^0=1
+		$$
+	\end{enumerate}\pagebreak
+	\Large{Newton's method}\\
+	\large{The problem}\\
+	\normalsize Suppose for a given function $f:D\rightarrow\mathbb{R}~\exists~x_0\in D$ such that
+	$$
+		f(x_0)=0,
+	$$
+	i.e. the function admits a root (we may have to deduce this from the intermediate value theorem for example).\\
+	{\bf Question:} How can $x_0$ be found?\\
+	{\bf Degree 1 case:} Suppose $f(x)=ax+b$ with $a\ne 0$. Then
+	$$
+		x_0=\frac{-b}{a}
+	$$
+	{\bf Degree 2 case:} Suppose $f(x)=ax^2+bx+c$ with $a\ne 0$ and $\Delta=b^2-4ac\ge 0$. Then we know that
+	$$
+		x_0=\frac{-b\pm\sqrt{b^2-4ac}}{2a}
+	$$
+	{\bf Degree 3 case:} A formula using only $n$th-root functions for solving the cubic was given in the $16^{th}$ century by Cardano. See https://en.wikipedia.org/wiki/Cubic\_function .\\
+	{\bf Degree 4 case:} A formula using only $n$th-root function for solving the quartic was given in the $16^{th}$ century by Ferrari. See https://en.wikipedia.org/wiki/Quartic\_function .
+	{\bf What about degree 5 and above?}\\
+	In the $19^{th}$ century Galois showed that there does not exist such a formula involving only $n$th-root functions to solve in general quintic function.\\
+	{\bf The general case}\\
+	Let $f:D\rightarrow\mathbb{R}$ be a function and $x_1\in D$ a first "guess", i.e. an initial approximation to the actual root $x_0$ of $f$. We will also make the assumption that $f$ is differentiable. Let's replace $f$ by its linear approximation at $x_1$, i.e.
+	$$
+		f(x)\approx L_{x_1}(x)=f'(x_1)(x-x_1)+f(x_1)
+	$$
+	Now, instead of searching for $x_0$ such that $f(x_0)=0$, let's find and $x_2$ INCOMPLETE.\\
+	Now the hope is twofold:
+	\begin{itemize}
+		\item The point $x_2$ is in $D$, and
+		\item The point $x_2$ is closer to $x_0$ than $x_1$
+	\end{itemize}
+	If both turn out to be true, we could then iterate the process, i.e. we could compute an $x_3$ as
+	IMCOMPLETE\\
+	{\bf Theorem}\\
+	If the derivative $f'$ of $f$ is continuous and that $f'(x_0)\ne 0$, then there exists a neighbourhood of INCOMPLETE.
+	\pagebreak
+	\Large{Integration}\\
+	\large{Introduction}\\
+	\normalsize
+	We are going to take our first step towards understanding one of the most important theorems in mathematics, classical mechanics, and electromagnetism.\\
+	The implications of this result are felt throughout science and engineering.\\
+	It will occupy the remainder of this course, half of MAT1322, and all of MAT2322.\\
+	{\bf Stokes' theorem}\\
+	{\bf Theorem}
+	\Large$$
+		\int_{\partial\mathcal{O}}f=\int_{\mathcal{O}}df
+	$$
+	\normalsize
+	We will restrict ourselves to the following case:
+	\begin{itemize}
+		\item $f:D\subset\mathbb{R}\rightarrow\mathbb{R}$ differentiable
+		\item $df=f'$
+		\item $\mathcal{O}=[a,b]\subset D$
+		\item $\partial\mathcal{O}=\{a\}\cup\{b\}$
+		\item $\int_{\partial\mathcal{O}}=INCOMPLETE$
+	\end{itemize}
+	{\bf The fundamental theorem}\\
+	Hence we will try to understand the following:\\
+	{\bf Theorem}
+	$$
+		f(b)-f(a)=\int_{[a,b]}f'
+	$$
+	Hence our object of study becomes
+	$$
+		\int_{[a,b]}f'
+	$$
+	which is a number!\\
+	
 \end{document}
